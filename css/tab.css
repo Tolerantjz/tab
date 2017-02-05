@@ -1,0 +1,8 @@
+*{margin: 0;padding: 0;}
+ul li{list-style-type: none;}
+.main{margin: 20px;overflow: hidden;position: relative;}
+.numO{float: left;height: 30px;line-height: 30px;padding: 0px 10px;border-bottom:  1px solid lightgray;}
+.test{width: 100px;position: absolute;top: 51px;left: 152px;background-color: white;border: 1px solid lightgray;display: none;}
+.test li{padding: 2.5px 20px;}
+#show{width: 80%;margin-left: 20px;margin-bottom: 20px;}
+.showTwo,.showThree,.showFour{display: none;transition: opacity 1s;}
