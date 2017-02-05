@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>tab</title>
-		<link rel="stylesheet" type="text/css" href="css/tab.css"/>
+		<link rel="stylesheet" type="text/css" href="css/tab.css" />
 	</head>
 	<body>
 		<ul class="main" id="list">
-			<li class="numO">Home</li>
+			<li class="numO choosed">Home</li>
 			<li class="numO">Profile</li>
 			<li class="numO" id="dropDown">Dropdown</li>
 		</ul>
@@ -30,54 +30,109 @@
 		let content = show.getElementsByTagName("div");
 		let test = document.getElementById("test");
 		let tes = test.getElementsByTagName("li");
-		let dropDown= document.getElementById("dropDown");
-		dropDown.addEventListener("click",function(){
-			for(let i = 0;i<lis.length;i++){
-					lis[i].style.border = "1px solid transparent";
-					lis[i].style.borderBottom = "1px solid lightgray";
-				}
-			test.style.display = "block";
-			this.style.border = "1px solid lightgray";
-			this.style.borderBottom = "1px solid transparent";
+		let dropDown = document.getElementById("dropDown");
+		let bol = true;
+		let clickBol = true;
+		/*空白点击*/
+		document.addEventListener("click", function(e) {
+			e.stopPropagation();
+			if(!bol) {
+				test.style.display = "none";
+				bol = true;
+				console.log("a");
+			}
 		})
-		for(let i = 0;i<lis.length-1;i++){
+		/*DropDown*/
+		dropDown.addEventListener("click", function(e) {
+			e.stopPropagation();
+			if(bol == true) {
+				test.style.display = "block";
+				dropDown.style.border = "1px solid rgb(161,194,222)";
+				dropDown.style.backgroundColor = "rgb(238,238,238)";
+				bol = false;
+				console.log("b");
+			} else if(!bol) {
+				test.style.display = "none";
+				dropDown.style.border = "1px solid transparent";
+				dropDown.style.borderBottom = "1px solid lightgray";
+				bol = true;
+			}
+		})
+		/*mouseenter&mouseleave*/
+		for(let i = 0; i < lis.length; i++) {
 			lis[i].index = i;
-			lis[i].addEventListener("click",function(){
-				for(let i =0;i<content.length;i++){
-					content[i].style.opacity = 0;
-					content[i].style.display = "none";
-				}
-				for(let i = 0;i<lis.length;i++){
-					lis[i].style.border = "1px solid transparent";
-					lis[i].style.borderBottom = "1px solid lightgray";
-					test.style.display = "none";
-				}
-					content[this.index].style.opacity = 1;
-					content[this.index].style.display = "block";	
-					this.style.border = "1px solid lightgray";
-					this.style.borderBottom = "1px solid transparent";
+			lis[i].addEventListener("mouseenter", function() {
+				this.style.backgroundColor = "rgb(238,238,238)";
+			})
+		}	
+		for(let i = 0; i < lis.length; i++) {
+			lis[i].addEventListener("mouseleave", function() {
+				lis[i].style.backgroundColor = "white";
 			})
 		}
-		
-		for(let i = 0;i<tes.length;i++){
-			tes[i].index = i;
-			tes[i].addEventListener("click",function(){
-				for(let i = 0 ;i<tes.length;i++){
-					tes[i].style.backgroundColor = "white";
-				}
-				for(let i = 0;i<content.length;i++){
+		/*Home&Profile*/
+		for(let i = 0; i < lis.length - 1; i++) {
+			lis[i].index = i;
+			lis[i].addEventListener("click", function(e) {
+				e.stopPropagation();
+				for(let i = 0; i < content.length; i++) {
 					content[i].style.opacity = 0;
 					content[i].style.display = "none";
 				}
-				if(this.index==0){
-					content[content.length-2].style.opacity = 1;
-					content[content.length-2].style.display = "block";
-				}else if(this.index==1){
-					content[content.length-1].style.opacity = 1;
-					content[content.length-1].style.display = "block";
+				for(let i = 0; i < lis.length; i++) {
+					lis[i].style.border = "1px solid transparent";
+					lis[i].style.borderBottom = "1px solid lightgray";
+					lis[i].style.color = "skyblue";
+					test.style.display = "none";
+				}
+				content[this.index].style.opacity = 1;
+				content[this.index].style.display = "block";
+				this.style.border = "1px solid lightgray";
+				this.style.borderBottom = "1px solid transparent";
+				this.style.backgroundColor = "white";
+				this.style.color = "black";
+				this.style.cursor = "default";
+			})
+		}
+		/*@*/
+		for(let i = 0; i < tes.length; i++) {
+			tes[i].index = i;
+			tes[i].addEventListener("click", function(e) {
+				e.stopPropagation();
+				for(let i = 0; i < tes.length; i++) {
+					tes[i].style.backgroundColor = "white";
+				}
+				for(let i = 0; i < content.length; i++) {
+					content[i].style.opacity = 0;
+					content[i].style.display = "none";
+				}
+				if(this.index == 0) {
+					content[content.length - 2].style.opacity = 1;
+					content[content.length - 2].style.display = "block";
+				} else if(this.index == 1) {
+					content[content.length - 1].style.opacity = 1;
+					content[content.length - 1].style.display = "block";
 				}
 				test.style.display = "none";
 				this.style.backgroundColor = "skyblue";
+				
+				for(let i = 0; i < lis.length; i++) {
+					lis[i].style.border = "1px solid transparent";
+					lis[i].style.borderBottom = "1px solid lightgray";
+					lis[i].style.color = "skyblue";
+				}
+				
+				if(clickBol == true){
+					dropDown.style.border = "1px solid lightgray";
+					dropDown.style.borderBottom = "1px solid transparent";
+					dropDown.style.color = "black";
+					clickBol = false;
+				}else if(!clickBol){
+					dropDown.style.border = "1px solid transparent";
+					dropDown.style.borderBottom = "1px solid lightgray";
+					clickBol = true;
+				}
+				console.log(1);
 			})
 		}
 	</script>
