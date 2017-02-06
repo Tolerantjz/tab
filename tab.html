@@ -2,138 +2,128 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>tab</title>
-		<link rel="stylesheet" type="text/css" href="css/tab.css" />
+		<title>tabNew</title>
+		<link rel="stylesheet" href="css/tabReset.css" />
 	</head>
 	<body>
-		<ul class="main" id="list">
-			<li class="numO choosed">Home</li>
-			<li class="numO">Profile</li>
-			<li class="numO" id="dropDown">Dropdown</li>
-		</ul>
-		<ul class="test" id="test">
-			<li>@fat</li>
-			<li>@mdo</li>
-		</ul>
-		<div id="show">
-			<div class="showOne">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</div>
-			<div class="showTwo">Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park</div>
-			<div class="showThree">Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr</div>
-			<div class="showFour">Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</div>
+		<div class="cover">
+			<ul class="main" id="main">
+				<li class="initial oldBorder one fontColor" id="maiC">Home</li>
+				<li class="initial oldBorder">Profile</li>
+				<li class="initial oldBorder" id="drop">Dropdown</li>	
+			</ul>
+			
+			<ul class="part disappear" id="part">
+				<li class="pli">@fat</li>
+				<li class="pli">@mdo</li>
+			</ul>
+			<div class="show" id="show">
+				<div class="showOne appear">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</div>
+				<div class="showTwo disappear">Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</div>
+				<div class="showThree disappear">Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</div>
+				<div class="showFour disappear">Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan</div>
+			</div>
 		</div>
-		<div>dsds</div>
+		<script type="text/javascript">
+			let main = document.getElementById("main");
+			let part = document.getElementById("part");
+			let show = document.getElementById("show");
+			let mainLis = main.getElementsByTagName("li");
+			let partLis = part.getElementsByTagName("li")
+			let showdivs = show.getElementsByTagName("div");
+			let drop = document.getElementById("drop");
+			let bol = true;
+			let clickBol = true;
+			let coverBol = true;
+			for(let i = 0;i<mainLis.length;i++){
+				mainLis[i].index = i;
+				mainLis[i].addEventListener("mouseenter",function(e){
+					e.stopPropagation();
+					mainLis[i].classList.add("changeColor","hover");
+				})
+				mainLis[i].addEventListener("mouseleave",function(e){
+					e.stopPropagation();
+					mainLis[i].classList.remove("changeColor","hover");
+				})
+				mainLis[i].addEventListener("click",function(e){
+					e.stopPropagation();
+					for(let i = 0;i<mainLis.length-1;i++){
+						mainLis[i].classList.remove("fontColor","one");
+						mainLis[mainLis.length-1].classList.remove("fontColor","one");
+						mainLis[i].removeAttribute("id","maiC");
+					}
+					for(let i = 0;i<showdivs.length;i++){
+						showdivs[i].classList.add("disappear");
+						showdivs[i].classList.remove("appear");
+					}
+					if(!bol){
+						part.classList.add("disappear");
+						drop.classList.remove("dropBorder");
+						bol = true;
+					}
+					showdivs[this.index].classList.add("appear");
+					this.setAttribute("id","maiC");
+					this.classList.add("fontColor","one","oldBorder");
+				})
+			}
+			
+			document.addEventListener("click",function(e){
+				e.stopPropagation();
+				if(!bol){
+					part.classList.add("disappear");
+					drop.classList.remove("dropBorder");
+					bol = true;
+				}
+			})
+			
+			drop.addEventListener("click",function(e){
+				e.stopPropagation();
+				if(bol == true){
+					part.classList.remove("disappear");	
+					drop.classList.add("dropBorder");
+					bol = false;
+				}else if(!bol){
+					part.classList.add("disappear");
+					drop.classList.remove("dropBorder");
+					bol = true;
+				}
+			})
+			
+			for(let i = 0;i<partLis.length;i++){
+				partLis[i].index = i;
+				partLis[i].addEventListener("mouseenter",function(e){
+					e.stopPropagation();
+					partLis[i].classList.add("parColor");
+				})
+				partLis[i].addEventListener("mouseleave",function(e){
+					e.stopPropagation();
+					partLis[i].classList.remove("parColor");
+				})
+				partLis[i].addEventListener("click",function(e){
+					e.stopPropagation();
+					for(let i = 0;i<partLis.length;i++){
+						partLis[i].removeAttribute("id","latestColor");
+					}
+					for(let i = 0;i<showdivs.length;i++){
+						showdivs[i].classList.add("disappear");
+						showdivs[i].classList.remove("appear");
+					}
+					showdivs[showdivs.length-this.index-1].classList.add("appear");
+					for(let i = 0;i<mainLis.length;i++){
+						mainLis[i].classList.remove("fontColor","one");
+					}
+					mainLis[mainLis.length-1].classList.add("fontColor","one","oldBorder");
+					if(!bol){
+						part.classList.add("disappear");
+						drop.classList.remove("dropBorder");
+						bol = true;
+					}
+//					this.classList.add("latestColor");
+					this.setAttribute("id","latestColor");
+				})
+			}
+			
+			
+		</script>
 	</body>
-	<script type="text/javascript">
-		let list = document.getElementById("list");
-		let lis = list.getElementsByTagName("li");
-		let show = document.getElementById("show");
-		let content = show.getElementsByTagName("div");
-		let test = document.getElementById("test");
-		let tes = test.getElementsByTagName("li");
-		let dropDown = document.getElementById("dropDown");
-		let bol = true;
-		let clickBol = true;
-		/*空白点击*/
-		document.addEventListener("click", function(e) {
-			e.stopPropagation();
-			if(!bol) {
-				test.style.display = "none";
-				bol = true;
-				console.log("a");
-			}
-		})
-		/*DropDown*/
-		dropDown.addEventListener("click", function(e) {
-			e.stopPropagation();
-			if(bol == true) {
-				test.style.display = "block";
-				dropDown.style.border = "1px solid rgb(161,194,222)";
-				dropDown.style.backgroundColor = "rgb(238,238,238)";
-				bol = false;
-				console.log("b");
-			} else if(!bol) {
-				test.style.display = "none";
-				dropDown.style.border = "1px solid transparent";
-				dropDown.style.borderBottom = "1px solid lightgray";
-				bol = true;
-			}
-		})
-		/*mouseenter&mouseleave*/
-		for(let i = 0; i < lis.length; i++) {
-			lis[i].index = i;
-			lis[i].addEventListener("mouseenter", function() {
-				this.style.backgroundColor = "rgb(238,238,238)";
-			})
-		}	
-		for(let i = 0; i < lis.length; i++) {
-			lis[i].addEventListener("mouseleave", function() {
-				lis[i].style.backgroundColor = "white";
-			})
-		}
-		/*Home&Profile*/
-		for(let i = 0; i < lis.length - 1; i++) {
-			lis[i].index = i;
-			lis[i].addEventListener("click", function(e) {
-				e.stopPropagation();
-				for(let i = 0; i < content.length; i++) {
-					content[i].style.opacity = 0;
-					content[i].style.display = "none";
-				}
-				for(let i = 0; i < lis.length; i++) {
-					lis[i].style.border = "1px solid transparent";
-					lis[i].style.borderBottom = "1px solid lightgray";
-					lis[i].style.color = "skyblue";
-					test.style.display = "none";
-				}
-				content[this.index].style.opacity = 1;
-				content[this.index].style.display = "block";
-				this.style.border = "1px solid lightgray";
-				this.style.borderBottom = "1px solid transparent";
-				this.style.backgroundColor = "white";
-				this.style.color = "black";
-				this.style.cursor = "default";
-			})
-		}
-		/*@*/
-		for(let i = 0; i < tes.length; i++) {
-			tes[i].index = i;
-			tes[i].addEventListener("click", function(e) {
-				e.stopPropagation();
-				for(let i = 0; i < tes.length; i++) {
-					tes[i].style.backgroundColor = "white";
-				}
-				for(let i = 0; i < content.length; i++) {
-					content[i].style.opacity = 0;
-					content[i].style.display = "none";
-				}
-				if(this.index == 0) {
-					content[content.length - 2].style.opacity = 1;
-					content[content.length - 2].style.display = "block";
-				} else if(this.index == 1) {
-					content[content.length - 1].style.opacity = 1;
-					content[content.length - 1].style.display = "block";
-				}
-				test.style.display = "none";
-				this.style.backgroundColor = "skyblue";
-				
-				for(let i = 0; i < lis.length; i++) {
-					lis[i].style.border = "1px solid transparent";
-					lis[i].style.borderBottom = "1px solid lightgray";
-					lis[i].style.color = "skyblue";
-				}
-				
-				if(clickBol == true){
-					dropDown.style.border = "1px solid lightgray";
-					dropDown.style.borderBottom = "1px solid transparent";
-					dropDown.style.color = "black";
-					clickBol = false;
-				}else if(!clickBol){
-					dropDown.style.border = "1px solid transparent";
-					dropDown.style.borderBottom = "1px solid lightgray";
-					clickBol = true;
-				}
-				console.log(1);
-			})
-		}
-	</script>
 </html>
