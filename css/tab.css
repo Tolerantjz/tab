@@ -3,15 +3,13 @@ body{font-family: Arial;}
 ul li{list-style-type: none;}
 .cover{border: 1px solid lightgray;width: 80%;margin: 20px 10px;position: relative;}
 .main{margin: 20px 10px 0px;overflow: hidden;}
-.initial{float: left;width: 80px;text-align: center;background-color: white;height: 25px;line-height: 25px;color: rgb(89,122,192);}
+.initial{float: left;text-align: center;background-color: white;height: 25px;line-height: 25px;color: rgb(89,122,192);padding: 5px 10px;}
 .oldBorder{border-bottom:1px solid lightgray ;}
-/*.newBorder{}*/
 /*hover*/
 .hover{color:rgb(35,82,124);}
 .one{border: 1px solid lightgray;border-bottom:1px solid transparent;}
-.part{margin-left:180px;position: absolute;background-color: white;border: 1px solid lightgray;box-sizing:content-box;}
-.pli{width: 80px;height: 25px;line-height: 25px;padding-left: 15px;}
-/*.pli:hover{background-color: gainsboro;}*/
+.part{margin-left:140px;position: absolute;background-color: white;border: 1px solid lightgray;box-sizing:content-box;}
+.pli{height: 25px;line-height: 25px;padding: 1.5px 35px 1.5px 15px;}
 .changeColor{background-color: lightgrey;color: rgb(35,116,184);cursor: pointer;}
 #latestColor{background-color: rgb(51,122,183);color: white;}
 .fontColor{color: black;cursor: auto;}
