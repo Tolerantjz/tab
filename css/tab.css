@@ -1,12 +1,25 @@
 *{margin: 0;padding: 0;}
+body{font-family: Arial;}
 ul li{list-style-type: none;}
-.main{margin: 20px;overflow: hidden;position: relative;}
-.numO{float: left;height: 30px;line-height: 30px;padding: 0px 10px;border-bottom:  1px solid lightgray;color: skyblue;}
-.play{background-color: rgb(238,238,238);cursor: pointer;}
-.choosed{border: 1px solid lightgray;border-bottom: 1px solid transparent;color: black;}
-.test{width: 100px;position: absolute;top: 51px;left: 152px;background-color: white;border: 1px solid lightgray;display: none;}
-.test li{padding: 2.5px 20px;}
-.test li:hover{color: grey;}
-.test li:visited{background-color: brown;}
-#show{width: 80%;margin-left: 20px;margin-bottom: 20px;}
-.showTwo,.showThree,.showFour{display: none;transition: opacity 1s;}
+.cover{border: 1px solid lightgray;width: 80%;margin: 20px 10px;position: relative;}
+.main{margin: 20px 10px 0px;overflow: hidden;}
+.initial{float: left;width: 80px;text-align: center;background-color: white;height: 25px;line-height: 25px;color: rgb(89,122,192);}
+.oldBorder{border-bottom:1px solid lightgray ;}
+/*.newBorder{}*/
+/*hover*/
+.hover{color:rgb(35,82,124);}
+.one{border: 1px solid lightgray;border-bottom:1px solid transparent;}
+.part{margin-left:180px;position: absolute;background-color: white;border: 1px solid lightgray;box-sizing:content-box;}
+.pli{width: 80px;height: 25px;line-height: 25px;padding-left: 15px;}
+/*.pli:hover{background-color: gainsboro;}*/
+.changeColor{background-color: lightgrey;color: rgb(35,116,184);cursor: pointer;}
+#latestColor{background-color: rgb(51,122,183);color: white;}
+.fontColor{color: black;cursor: auto;}
+.dropBorder{border:1px solid rgb(149,182,211);}
+/*show OR hidden*/
+.showOne,.showTwo,.showThree,.showFour{width: 95%;text-indent: 2rem;margin-left: 2.5%;}
+.disappear{display: none;}
+.appear{display: block;}
+/*part*/
+.parColor{background-color: gainsboro;}
+#maiC{background-color: white;}
